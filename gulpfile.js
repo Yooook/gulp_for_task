@@ -1,26 +1,13 @@
-/*
- * @Author: iceStone
- * @Date:   2016-01-27 10:21:56
- * @Last Modified by:   iceStone
- * @Last Modified time: 2016-01-27 11:08:35
- */
 
 'use strict';
-/**
- * 1. LESS编译 压缩 合并
- * 2. JS合并 压缩 混淆
- * 3. img复制
- * 4. html压缩
- */
 
-// 在gulpfile中先载入gulp包，因为这个包提供了一些API
+//载入gulp包
 var gulp = require('gulp');
 var less = require('gulp-less');
 var cssnano = require('gulp-cssnano');
 
-// 1. LESS编译 压缩 --合并没有必要，一般预处理CSS都可以导包
+// 1. LESS编译 压缩 
 gulp.task('style', function() {
-  // 这里是在执行style任务时自动执行的
   gulp.src(['src/styles/*.less', '!src/styles/_*.less'])
     .pipe(less())
     .pipe(cssnano())
